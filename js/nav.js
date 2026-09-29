@@ -87,6 +87,18 @@ document.querySelectorAll('.site-nav a').forEach(function (link) {
   }
 });
 
+// Student stylesheets: on pages with data-themes on their <body> tag,
+// add ?theme=<first name> to the address to load themes/<first name>.css
+if (document.body.hasAttribute('data-themes')) {
+  const theme = new URLSearchParams(location.search).get('theme');
+  if (theme && /^[a-z]+$/.test(theme)) {
+    const stylesheet = document.createElement('link');
+    stylesheet.rel = 'stylesheet';
+    stylesheet.href = 'themes/' + theme + '.css';
+    document.head.appendChild(stylesheet);
+  }
+}
+
 // Neko, the cat that follows your mouse (oneko.js)
 // To hide the cat on a page, add data-no-cat to its <body> tag
 if (!document.body.hasAttribute('data-no-cat')) {

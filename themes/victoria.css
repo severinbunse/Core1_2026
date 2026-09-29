@@ -1,0 +1,106 @@
+/* Victoria's stylesheet for the Fork, Pull and Push page.
+
+   To see it: open exercise-fork-pull-push.html in your browser
+   and add ?theme=victoria to the end of the address, then reload after every change.
+
+   Only change this file: no HTML, and no one else's CSS.
+   Every class and ID on the page is listed below. Fill in the ones you want;
+   empty rules do nothing, so you can leave the rest as they are. */
+
+
+/* ---------- The whole page ---------- */
+
+/* Everything: good place for the typeface, text size and background */
+body {
+}
+
+
+/* ---------- The index (at the top of the page) ---------- */
+
+/* The whole index */
+#index {
+}
+
+/* "Core 1: Interaction Lab" */
+.site-title {
+}
+
+/* The text about the class and the list of participants */
+.site-intro {
+}
+
+.site-intro p {
+}
+
+/* The list of projects */
+.projects {
+}
+
+/* One project, with its exercises */
+.project {
+}
+
+/* A project's name, e.g. "Project 2: Recipe" */
+.project-title {
+}
+
+/* The exercises under a project */
+.activities {
+}
+
+/* One exercise */
+.activity {
+}
+
+/* The link to the page you are on (Fork, Pull and Push) */
+a[aria-current="page"] {
+}
+
+/* Syllabus and Contact */
+.nav-links {
+}
+
+
+/* ---------- The exercise (below the index) ---------- */
+
+/* The whole exercise text */
+#content {
+}
+
+/* The title: "In-Class Exercise: Fork, Pull and Push" */
+h1 {
+}
+
+/* The date in the title */
+time {
+}
+
+/* Paragraphs */
+p {
+}
+
+/* The numbered list of steps */
+ol {
+}
+
+/* One step */
+li {
+}
+
+/* The bold words at the start of each step: "Fork:", "Clone:" ... */
+strong {
+}
+
+/* File and folder names, e.g. themes */
+code {
+}
+
+
+/* ---------- Links (in the index and the exercise) ---------- */
+
+a {
+}
+
+/* When the mouse is over a link */
+a:hover {
+}
