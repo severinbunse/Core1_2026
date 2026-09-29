@@ -28,7 +28,7 @@ const siteNav = `
       <ul class="activities">
         <li class="activity"><a href="exercise-recipe-in-figma.html">Exercise: Recipe in Figma</a></li>
         <li class="activity"><a href="exercise-type-on-the-web.html">Exercise: Type on the Web</a></li>
-        <li class="activity"><a href="exercise-fork-pull-push.html">Exercise: Fork, Pull and Push</a></li>
+        <li class="activity"><a href="exercise-fork-pull-push.html">Exercise: Fork, Commit &amp; Pull Request</a></li>
       </ul>
     </li>
 
