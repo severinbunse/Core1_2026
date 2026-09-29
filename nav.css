@@ -1,0 +1,147 @@
+/* Left-aligned site index (see nav.js).
+   The index is fixed, so the page content keeps its own styles
+   and stays centered in the viewport. */
+
+/* Links within the site are black and not underlined;
+   links to other websites are blue and underlined */
+a {
+  color: black;
+  text-decoration: none;
+}
+
+a[href^="http"] {
+  color: blue;
+  text-decoration: underline;
+}
+
+.site-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: max-content;
+  white-space: nowrap; /* the index is as wide as its longest line */
+  padding: 24px;
+  overflow-y: auto;
+  font-size: 16px;
+  line-height: 1.25;
+}
+
+.site-nav .site-title {
+  display: block;
+  font-size: 16px;
+  font-weight: bold;
+  color: black;
+  text-decoration: none;
+  margin-bottom: 24px;
+}
+
+/* Intro text: wraps to the width of the index instead of stretching it */
+.site-nav .site-intro {
+  white-space: normal;
+  width: 0;
+  min-width: 100%;
+  margin-bottom: calc(24px + 1lh); /* one extra empty line before the projects */
+}
+
+.site-nav .site-intro p {
+  margin: 0 0 8px;
+}
+
+.site-nav h2 {
+  font-size: 16px;
+  font-weight: normal;
+  text-decoration: underline;
+  margin: 0 0 4px;
+}
+
+.site-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.site-nav .project {
+  margin-bottom: 12px;
+}
+
+.site-nav .project-title {
+  font-weight: bold;
+}
+
+.site-nav .dates {
+  display: block;
+}
+
+/* Projects we haven't reached yet: one grey for the whole item */
+.site-nav [data-status="upcoming"] {
+  color: #999;
+}
+
+/* In-class activities, nested under their assignment */
+.site-nav .activities {
+  margin-top: 6px;
+  padding-left: 12px;
+  border-left: 1px solid black;
+}
+
+.site-nav .activity {
+  margin-bottom: 4px;
+}
+
+.site-nav .activity time {
+  margin-right: 4px;
+}
+
+.site-nav a[aria-current="page"] {
+  color: black;
+  font-style: italic;
+  text-decoration: none;
+}
+
+/* Student list: mirrors the index on the right.
+   The top padding lines "Students" up with "Assignments"
+   (24px padding + one line of title + 24px title margin). */
+.student-nav {
+  left: auto;
+  right: 0;
+  text-align: right;
+  padding-top: calc(48px + 1.25em);
+}
+
+/* Syllabus and contact links, below the index */
+.site-nav .nav-links {
+  margin-top: 24px;
+}
+
+/* Narrower screens (where the index would overlap the centered content):
+   the content fills the first screen, centered as before, with the index below it */
+@media (max-width: 1500px) {
+  body {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: minmax(calc(100svh - 48px), auto) auto;
+    place-items: center;
+  }
+  .page a {
+    overflow-wrap: anywhere;
+  }
+  .site-nav {
+    position: static;
+    order: 2;
+    width: 100%;
+    max-width: calc(680px - 10ch);
+    white-space: normal;
+    border-top: 1px solid #ccc;
+  }
+  .student-nav {
+    order: 3;
+    text-align: left;
+    padding-top: 24px;
+  }
+}
+
+/* Neko, the cat (see oneko.js): 1.25x its original 32px */
+#oneko {
+  transform: scale(1.25);
+}

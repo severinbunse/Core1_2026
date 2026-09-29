@@ -1,0 +1,109 @@
+/* Layout only: no typefaces, sizes, colors or spacing.
+   Content centered in the window, index on the left.
+
+   ----------------------------------------------------------------
+   WHAT YOU CAN STYLE
+   ----------------------------------------------------------------
+
+   The two areas of every page
+     #index              the list of assignments on the left (<nav>)
+     #content            the page itself, in the middle (<main class="page">)
+
+   Which page you are on (class on <body>)
+     body.syllabus       the syllabus
+     body.assignment     a project page (e.g. Project 2: Recipe)
+     body.exercise       an in-class exercise page
+
+   Elements used on every page
+     h1                  the page title (one per page)
+     h2, h3              section headings
+     p, a, ul, li
+     time                every date on the site
+
+   Index (left)
+     .site-title         "Core 1: Interaction Lab"
+     .site-intro         the short text about the class under the title
+     .project            one project in the list
+     .project-title      its name
+     .activities         the in-class activities under a project
+     .activity           one in-class activity
+     .nav-links          Syllabus and Contact
+     a[aria-current="page"]   the link to the page you are on
+
+   Syllabus
+     .course-info        course title and details at the top
+     #projects           all projects
+     .project, .project-header, .project-title, .dates
+     details, summary    the collapsible "Part 1/2/3" descriptions
+     #schedule           all weeks
+     .week, .week-header, .week-title
+     .assessment         grading table at the bottom
+
+   Exercise pages
+     .student-projects   links to everyone's work
+
+   Where we are in the semester (on every .project and .week)
+     [data-status="done"]
+     [data-status="current"]
+     [data-status="upcoming"]
+
+   ---------------------------------------------------------------- */
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.page {
+  max-width: calc(680px - 10ch);
+}
+
+.site-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  white-space: nowrap;
+}
+
+.student-nav {
+  left: auto;
+  right: 0;
+  text-align: right;
+  padding-top: 1lh; /* the height of the site title, so "Students" lines up with "Assignments" */
+}
+
+/* Intro text wraps to the width of the index instead of stretching it */
+.site-intro {
+  white-space: normal;
+  width: 0;
+  min-width: 100%;
+}
+
+.site-title,
+.dates {
+  display: block;
+}
+
+/* Top-level lists only: nested lists (the in-class activities)
+   keep the browser's default indent and bullets */
+.site-nav > ul {
+  list-style: none;
+  padding: 0;
+}
+
+/* One empty line between projects in the index */
+.site-nav .project {
+  margin-bottom: 1lh;
+}
+
+/* Syllabus: title on the left, date on the right */
+.project-header,
+.week-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+}
