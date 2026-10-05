@@ -120,30 +120,28 @@ a[href^="http"] {
   margin-top: 24px;
 }
 
-/* Narrower screens (where the index would overlap the centered content):
-   the content fills the first screen, centered as before, with the index below it */
-@media (max-width: 1500px) {
+/* Narrower screens, down to phone size: the index stays on the left
+   and the content is centered in the space to its right, so they don't overlap */
+@media (min-width: 701px) and (max-width: 1500px) {
   body {
     display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    grid-template-rows: minmax(calc(100svh - 48px), auto) auto;
-    place-items: center;
+    grid-template-columns: max-content minmax(0, 1fr);
+    padding: 0;
   }
+  #index {
+    position: sticky;
+    align-self: start;
+    height: 100svh;
+    box-sizing: border-box;
+  }
+  .page {
+    place-self: center;
+  }
+}
+
+@media (max-width: 1500px) {
   .page a {
     overflow-wrap: anywhere;
-  }
-  .site-nav {
-    position: static;
-    order: 2;
-    width: 100%;
-    max-width: calc(680px - 10ch);
-    white-space: normal;
-    border-top: 1px solid black;
-  }
-  .student-nav {
-    order: 3;
-    text-align: left;
-    padding-top: 24px;
   }
 }
 
@@ -179,7 +177,9 @@ a[href^="http"] {
     bottom: auto;
     z-index: 1;
     box-sizing: border-box;
+    width: auto;
     max-width: none;
+    white-space: normal;
     height: calc(1.25em + 33px);
     overflow: hidden;
     display: flex;
@@ -255,15 +255,15 @@ a[href^="http"] {
   text-decoration: underline;
 }
 
-/* Wide screens: the Neko note sits at the bottom of the window
-   (or below the index's last line, if the index is taller than the window) */
-@media (min-width: 1501px) {
+/* Above phone size: Syllabus, Contact and the Neko note sit at the bottom of the window
+   (or below the projects, if the index is taller than the window) */
+@media (min-width: 701px) {
   #index {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
   }
-  #index .neko-note {
+  #index .nav-links {
     margin-top: auto;
     padding-top: 24px;
   }

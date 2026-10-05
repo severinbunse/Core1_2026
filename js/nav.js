@@ -12,6 +12,7 @@ const siteNav = `
 
   <div class="site-intro">
     <p>This is the class site for Core 1: Interaction Lab, Fall 2026. Below you'll find every prompt and the projects students made in response.</p>
+    <!-- Participants list hidden for now: remove these comment marks to show it again
     <p class="participants-label">Participants:</p>
     <ul class="participants">
       <li>Tarni Anand</li>
@@ -31,6 +32,7 @@ const siteNav = `
       <li>Florence Wu</li>
       <li>Victoria Yim</li>
     </ul>
+    -->
   </div>
 
   <ul class="projects">
