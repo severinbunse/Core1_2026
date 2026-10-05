@@ -163,11 +163,12 @@ a[href^="http"] {
    slides the line under it down to the bottom of the screen,
    revealing the rest of the index */
 @media (max-width: 700px) {
-  /* The page content stays centered in the space below the menu
+  /* The page content starts right below the menu, at the top
      (the menu's closed height: one line of text, its padding and its line) */
   body {
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
     padding: calc(1.25em + 33px) 0 0;
   }
   .site-nav {
@@ -211,13 +212,19 @@ a[href^="http"] {
     visibility: hidden;
     transition: visibility 0s 0.8s;
   }
+  /* Opened, the course description starts where the page content does:
+     16px under the line, the same space as between the title and the line
+     (16px padding + 1px line + 16px) */
   .site-nav .site-intro {
-    margin-top: 24px;
+    margin-top: 33px;
   }
   .page {
     width: 100%;
-    margin: auto;
-    padding: 24px 16px;
+    margin: 0 auto;
+    padding: 16px 16px 24px;
+  }
+  .page > :first-child {
+    margin-top: 0;
   }
 }
 
@@ -231,4 +238,46 @@ a[href^="http"] {
 /* Neko, the cat (see oneko.js): 1.25x its original 32px */
 #oneko {
   transform: scale(1.25);
+}
+
+/* Note about Neko at the end of the index: smaller, and wraps like the intro */
+.site-nav .neko-note {
+  font-size: 12px;
+  white-space: normal;
+  width: 0;
+  min-width: 100%;
+  margin: 24px 0 0;
+}
+
+/* Its link is a link to another website, so it looks like one (blue, underlined) */
+.site-nav .neko-note a[href^="http"] {
+  color: blue;
+  text-decoration: underline;
+}
+
+/* Wide screens: the Neko note sits at the bottom of the window
+   (or below the index's last line, if the index is taller than the window) */
+@media (min-width: 1501px) {
+  #index {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  #index .neko-note {
+    margin-top: auto;
+    padding-top: 24px;
+  }
+  /* In a flex column these margins no longer merge with the next gap,
+     so drop them to keep the spacing the same as before */
+  #index .site-intro p:last-child,
+  #index .projects > .project:last-child {
+    margin-bottom: 0;
+  }
+}
+
+/* Participants in the intro: one name per line, right under the label */
+.site-nav .site-intro .participants-label {
+  margin-top: 1lh; /* one empty line after the course description */
+  margin-bottom: 0;
+  text-decoration: underline;
 }

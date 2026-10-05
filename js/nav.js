@@ -12,7 +12,25 @@ const siteNav = `
 
   <div class="site-intro">
     <p>This is the class site for Core 1: Interaction Lab, Fall 2026. Below you'll find every prompt and the projects students made in response.</p>
-    <p>Participants: Tarni Anand, Ella Arslan, Aara Chaudhuri, Sara Drobova, Katie Jia, Jackson Kim, Amber Lee, Renee Liu, Liv Marotta, Isabella Noret, Sofia Reyes Rivas, Kitty Shi, Lulu Tomahawk, Undarga Tserendorj, Florence Wu, Victoria Yim</p>
+    <p class="participants-label">Participants:</p>
+    <ul class="participants">
+      <li>Tarni Anand</li>
+      <li>Ella Arslan</li>
+      <li>Aara Chaudhuri</li>
+      <li>Sara Drobova</li>
+      <li>Katie Jia</li>
+      <li>Jackson Kim</li>
+      <li>Amber Lee</li>
+      <li>Renee Liu</li>
+      <li>Liv Marotta</li>
+      <li>Isabella Noret</li>
+      <li>Sofia Reyes Rivas</li>
+      <li>Kitty Shi</li>
+      <li>Lulu Tomahawk</li>
+      <li>Undarga Tserendorj</li>
+      <li>Florence Wu</li>
+      <li>Victoria Yim</li>
+    </ul>
   </div>
 
   <ul class="projects">
@@ -46,6 +64,8 @@ const siteNav = `
     <li><a href="syllabus.pdf" target="_blank" rel="noopener">Syllabus</a></li>
     <li><a href="mailto:bunses@newschool.edu">Contact</a></li>
   </ul>
+
+  <p class="neko-note">※ The cat following your mouse is <a href="https://en.wikipedia.org/wiki/Neko_(software)" target="_blank" rel="noopener">Neko</a> (Japanese for "cat"), one of the first virtual pets on a computer desktop, years before digital companions like Tamagotchi and Clippy. It lived on Macintosh screens all through the 1990s.</p>
 
 </nav>
 `;
