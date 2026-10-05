@@ -29,12 +29,15 @@ const siteNav = `
       <ul class="activities">
         <li class="activity"><a href="exercise-recipe-in-figma.html">Exercise: Recipe in Figma</a></li>
         <li class="activity"><a href="exercise-type-on-the-web.html">Exercise: Type on the Web</a></li>
-        <li class="activity"><a href="exercise-fork-pull-push.html">Exercise: Fork, Commit &amp; Pull Request</a></li>
+        <li class="activity"><a href="https://severinbunse.github.io/fork-commit-pullrequest-Core1/" target="_blank" rel="noopener">Exercise: Fork, Commit &amp; Pull Request</a></li>
       </ul>
     </li>
 
     <li class="project" data-status="current">
       <a class="project-title" href="project-3-visual-only-webpage.html">Project 3: Visual-Only Webpage</a>
+      <ul class="activities">
+        <li class="activity"><a href="exercise-coding-from-life.html">Exercise: Coding from Life</a></li>
+      </ul>
     </li>
 
   </ul>

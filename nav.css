@@ -14,6 +14,12 @@ a[href^="http"] {
   text-decoration: underline;
 }
 
+/* ...except in the index, where every link looks the same */
+.site-nav a[href^="http"] {
+  color: black;
+  text-decoration: none;
+}
+
 .site-nav {
   position: fixed;
   top: 0;
@@ -156,11 +162,14 @@ a[href^="http"] {
    The title and the button share the first line;
    the rest of the index shows when the button opens it */
 @media (max-width: 700px) {
+  /* The page content stays centered in the space below the index */
   body {
-    display: block;
+    display: flex;
+    flex-direction: column;
     padding: 0;
   }
   .site-nav {
+    order: 0;
     position: sticky;
     top: 0;
     z-index: 1;
@@ -191,7 +200,8 @@ a[href^="http"] {
     margin-top: 24px;
   }
   .page {
-    margin: 0 auto;
+    width: 100%;
+    margin: auto;
     padding: 24px 16px;
   }
 }
