@@ -8,6 +8,7 @@ const siteNav = `
 <nav id="index" class="site-nav">
 
   <a class="site-title" href="index.html">Core 1: Interaction Lab</a>
+  <button class="nav-toggle" type="button" aria-expanded="false">Index +</button>
 
   <div class="site-intro">
     <p>This is the class site for Core 1: Interaction Lab, Fall 2026. Below you'll find every prompt and the projects students made in response.</p>
@@ -17,19 +18,23 @@ const siteNav = `
   <ul class="projects">
 
     <li class="project" data-status="done">
-      <a class="project-title" href="project-1-walk-or-interview.html">Project 1: Journal a Walk / Interview</a>
+      <a class="project-title" href="project-1-journal-a-walk.html">Project 1: Journal a Walk</a>
       <ul class="activities">
         <li class="activity"><a href="exercise-nonlinear-ways-of-reading.html">Exercise: Nonlinear Ways of Reading</a></li>
       </ul>
     </li>
 
-    <li class="project" data-status="current">
+    <li class="project" data-status="done">
       <a class="project-title" href="project-2-recipe.html">Project 2: Recipe</a>
       <ul class="activities">
         <li class="activity"><a href="exercise-recipe-in-figma.html">Exercise: Recipe in Figma</a></li>
         <li class="activity"><a href="exercise-type-on-the-web.html">Exercise: Type on the Web</a></li>
         <li class="activity"><a href="exercise-fork-pull-push.html">Exercise: Fork, Commit &amp; Pull Request</a></li>
       </ul>
+    </li>
+
+    <li class="project" data-status="current">
+      <a class="project-title" href="project-3-visual-only-webpage.html">Project 3: Visual-Only Webpage</a>
     </li>
 
   </ul>
@@ -79,6 +84,14 @@ if (currentPage === 'index.html') {
   const currentProject = document.querySelector('#index [data-status="current"] a.project-title');
   location.replace(currentProject ? currentProject.getAttribute('href') : 'syllabus.pdf');
 }
+
+// On phones the index is a menu: the button next to the title opens and closes it
+const navToggle = document.querySelector('#index .nav-toggle');
+navToggle.addEventListener('click', function () {
+  const open = document.getElementById('index').classList.toggle('open');
+  navToggle.setAttribute('aria-expanded', open);
+  navToggle.textContent = open ? 'Index \u2013' : 'Index +';
+});
 
 // Highlight the page you are on
 document.querySelectorAll('.site-nav a').forEach(function (link) {
