@@ -196,6 +196,15 @@ a[href^="http"] {
   .site-nav:not(.open) > :not(.site-title, .nav-toggle) {
     display: none;
   }
+  /* Open, the index fills the whole screen */
+  .site-nav.open {
+    position: fixed;
+    inset: 0;
+    max-height: none;
+    overflow-y: auto;
+    align-content: flex-start;
+    border-bottom: none;
+  }
   .site-nav.open .site-intro {
     margin-top: 24px;
   }
