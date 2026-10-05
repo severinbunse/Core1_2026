@@ -159,29 +159,41 @@ a[href^="http"] {
 }
 
 /* Phones: the index becomes a menu at the top of the page.
-   The title and the button share the first line;
-   the rest of the index shows when the button opens it */
+   The title and the button share the first line. Opening the menu
+   slides the line under it down to the bottom of the screen,
+   revealing the rest of the index */
 @media (max-width: 700px) {
-  /* The page content stays centered in the space below the index */
+  /* The page content stays centered in the space below the menu
+     (the menu's closed height: one line of text, its padding and its line) */
   body {
     display: flex;
     flex-direction: column;
-    padding: 0;
+    padding: calc(1.25em + 33px) 0 0;
   }
   .site-nav {
-    order: 0;
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
+    right: 0;
+    bottom: auto;
     z-index: 1;
+    box-sizing: border-box;
     max-width: none;
-    max-height: 100svh;
+    height: calc(1.25em + 33px);
+    overflow: hidden;
     display: flex;
     flex-wrap: wrap;
     align-items: baseline;
+    align-content: flex-start;
     padding: 16px;
     background: white;
     border-top: none;
     border-bottom: 1px solid black;
+    transition: height 0.8s ease-in-out;
+  }
+  .site-nav.open {
+    height: 100svh;
+    overflow-y: auto;
   }
   .site-nav .site-title {
     flex: 1;
@@ -193,25 +205,26 @@ a[href^="http"] {
   .site-nav > :not(.site-title, .nav-toggle) {
     flex-basis: 100%;
   }
+  /* Closed, the rest of the index can't be reached with the keyboard either
+     (it hides only once the line has slid back up) */
   .site-nav:not(.open) > :not(.site-title, .nav-toggle) {
-    display: none;
+    visibility: hidden;
+    transition: visibility 0s 0.8s;
   }
-  /* Open, the index fills the whole screen */
-  .site-nav.open {
-    position: fixed;
-    inset: 0;
-    max-height: none;
-    overflow-y: auto;
-    align-content: flex-start;
-    border-bottom: none;
-  }
-  .site-nav.open .site-intro {
+  .site-nav .site-intro {
     margin-top: 24px;
   }
   .page {
     width: 100%;
     margin: auto;
     padding: 24px 16px;
+  }
+}
+
+/* No sliding for people who have turned off animations on their device */
+@media (max-width: 700px) and (prefers-reduced-motion: reduce) {
+  .site-nav {
+    transition: none;
   }
 }
 
