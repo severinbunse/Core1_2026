@@ -131,21 +131,22 @@ a[href^="http"] {
   margin-top: calc(24px + 1lh);
 }
 
-/* Readings open and close with a click: "Readings +" / "Readings –" */
-.site-nav .readings summary {
+/* Projects and Readings open and close with a click on "+" / "–"
+   (on a project, its title is still a link to its page) */
+.site-nav summary {
   list-style: none;
   cursor: pointer;
 }
 
-.site-nav .readings summary::-webkit-details-marker {
+.site-nav summary::-webkit-details-marker {
   display: none;
 }
 
-.site-nav .readings summary::after {
+.site-nav summary::after {
   content: " +";
 }
 
-.site-nav .readings[open] summary::after {
+.site-nav details[open] > summary::after {
   content: " \2013";
 }
 

@@ -3,6 +3,7 @@
 // Each project has data-status="done", "current" or "upcoming".
 // Only list projects once they've been introduced in class; update the status as the semester goes on.
 // In-class activities go in the nested list under their assignment, by date.
+// Each project's list starts open; the "–" after its title closes it.
 
 const siteNav = `
 <nav id="index" class="site-nav">
@@ -38,26 +39,32 @@ const siteNav = `
   <ul class="projects">
 
     <li class="project" data-status="done">
-      <a class="project-title" href="project-1-journal-a-walk.html">Project 1: Journal a Walk</a>
-      <ul class="activities">
-        <li class="activity"><a href="exercise-nonlinear-ways-of-reading.html">Exercise: Nonlinear Ways of Reading</a></li>
-      </ul>
+      <details open>
+        <summary><a class="project-title" href="project-1-journal-a-walk.html">Project 1: Journal a Walk</a></summary>
+        <ul class="activities">
+          <li class="activity"><a href="exercise-nonlinear-ways-of-reading.html">Exercise: Nonlinear Ways of Reading</a></li>
+        </ul>
+      </details>
     </li>
 
     <li class="project" data-status="done">
-      <a class="project-title" href="project-2-recipe.html">Project 2: Recipe</a>
-      <ul class="activities">
-        <li class="activity"><a href="exercise-recipe-in-figma.html">Exercise: Recipe in Figma</a></li>
-        <li class="activity"><a href="exercise-type-on-the-web.html">Exercise: Type on the Web</a></li>
-        <li class="activity"><a href="https://severinbunse.github.io/fork-commit-pullrequest-Core1/" target="_blank" rel="noopener">Exercise: Fork, Commit &amp; Pull Request</a></li>
-      </ul>
+      <details open>
+        <summary><a class="project-title" href="project-2-recipe.html">Project 2: Recipe</a></summary>
+        <ul class="activities">
+          <li class="activity"><a href="exercise-recipe-in-figma.html">Exercise: Recipe in Figma</a></li>
+          <li class="activity"><a href="exercise-type-on-the-web.html">Exercise: Type on the Web</a></li>
+          <li class="activity"><a href="https://severinbunse.github.io/fork-commit-pullrequest-Core1/" target="_blank" rel="noopener">Exercise: Fork, Commit &amp; Pull Request</a></li>
+        </ul>
+      </details>
     </li>
 
     <li class="project" data-status="current">
-      <a class="project-title" href="project-3-visual-only-webpage.html">Project 3: Visual-Only Webpage</a>
-      <ul class="activities">
-        <li class="activity"><a href="exercise-coding-from-life.html">Exercise: Coding from Life</a></li>
-      </ul>
+      <details open>
+        <summary><a class="project-title" href="project-3-visual-only-webpage.html">Project 3: Visual-Only Webpage</a></summary>
+        <ul class="activities">
+          <li class="activity"><a href="exercise-coding-from-life.html">Exercise: Coding from Life</a></li>
+        </ul>
+      </details>
     </li>
 
   </ul>
