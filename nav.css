@@ -95,6 +95,16 @@ a[href^="http"] {
   margin-bottom: 4px;
 }
 
+/* Readings: long titles don't widen the index; they end in "…" instead
+   (the full title shows on hover) */
+.site-nav .readings .activity {
+  width: 0;
+  min-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .site-nav .activity time {
   margin-right: 4px;
 }
@@ -113,6 +123,16 @@ a[href^="http"] {
   right: 0;
   text-align: right;
   padding-top: calc(48px + 1.25em);
+}
+
+/* Readings, below the projects: the same space above it
+   as between the course description and the projects */
+.site-nav .readings {
+  margin-top: calc(24px + 1lh);
+}
+
+.site-nav .readings-title {
+  margin: 0;
 }
 
 /* Syllabus and contact links, below the index */
@@ -266,6 +286,10 @@ a[href^="http"] {
   #index .nav-links {
     margin-top: auto;
     padding-top: 24px;
+  }
+  /* Full width of the index, so reading titles can use it */
+  #index .readings {
+    align-self: stretch;
   }
   /* In a flex column these margins no longer merge with the next gap,
      so drop them to keep the spacing the same as before */
