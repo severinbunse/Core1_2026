@@ -131,13 +131,27 @@ a[href^="http"] {
   margin-top: calc(24px + 1lh);
 }
 
-.site-nav .readings-title {
-  margin: 0;
+/* Readings open and close with a click: "Readings +" / "Readings –" */
+.site-nav .readings summary {
+  list-style: none;
+  cursor: pointer;
 }
 
-/* Syllabus and contact links, below the index */
+.site-nav .readings summary::-webkit-details-marker {
+  display: none;
+}
+
+.site-nav .readings summary::after {
+  content: " +";
+}
+
+.site-nav .readings[open] summary::after {
+  content: " \2013";
+}
+
+/* Syllabus and contact links, right below the readings */
 .site-nav .nav-links {
-  margin-top: 24px;
+  margin-top: 0; /* no gap: Syllabus is the next line after Readings */
 }
 
 /* Narrower screens, down to phone size: the index stays on the left
@@ -275,15 +289,15 @@ a[href^="http"] {
   text-decoration: underline;
 }
 
-/* Above phone size: Syllabus, Contact and the Neko note sit at the bottom of the window
-   (or below the projects, if the index is taller than the window) */
+/* Above phone size: the Neko note sits at the bottom of the window
+   (or below Syllabus and Contact, if the index is taller than the window) */
 @media (min-width: 701px) {
   #index {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
   }
-  #index .nav-links {
+  #index .neko-note {
     margin-top: auto;
     padding-top: 24px;
   }

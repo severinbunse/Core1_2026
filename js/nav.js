@@ -62,15 +62,15 @@ const siteNav = `
 
   </ul>
 
-  <div class="readings">
-    <p class="readings-title">Readings</p>
+  <details class="readings">
+    <summary>Readings</summary>
     <ul class="activities">
       <li class="activity"><a href="https://contemporary-home-computing.org/affordance/" target="_blank" rel="noopener" title="Once Again, The Doorknob">Once Again, The Doorknob</a></li>
       <li class="activity"><a href="https://www.are.na/editorial/when-it-changed-part-3-an-ambient-aftermath" target="_blank" rel="noopener" title="When It Changed Part 3: An Ambient Aftermath">When It Changed Part 3: An Ambient Aftermath</a></li>
       <li class="activity"><a href="https://laurelschwulst.com/e/my-website-is-a-shifting-house/" target="_blank" rel="noopener" title="My Website Is a Shifting House Next to a River of Knowledge. What Could Yours Be?">My Website Is a Shifting House Next to a River of Knowledge. What Could Yours Be?</a></li>
       <li class="activity"><a href="https://laurelsletter.substack.com/p/laurels-letter-fall-winter-2023?open=false#§of-ultralight" target="_blank" rel="noopener" title="Laurel's Letter, Fall/Winter 2023 — Of Ultralight">Laurel's Letter, Fall/Winter 2023 — Of Ultralight</a></li>
     </ul>
-  </div>
+  </details>
 
   <ul class="nav-links">
     <li><a href="syllabus.pdf" target="_blank" rel="noopener">Syllabus</a></li>
