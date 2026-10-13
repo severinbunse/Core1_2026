@@ -62,7 +62,7 @@ const siteNav = `
       <details open>
         <summary><a class="project-title" href="project-3-visual-only-webpage.html">Project 3: Visual-Only Webpage</a></summary>
         <ul class="activities">
-          <li class="activity"><a href="exercise-coding-from-life.html">Exercise: Coding from Life</a></li>
+          <li class="activity"><a href="exercise-coding-from-life.html">Exercise: CSS Drawing</a></li>
         </ul>
       </details>
     </li>
