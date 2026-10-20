@@ -58,12 +58,21 @@ const siteNav = `
       </details>
     </li>
 
-    <li class="project" data-status="current">
+    <li class="project" data-status="done">
       <details open>
         <summary><a class="project-title" href="project-3-visual-only-webpage.html">Project 3: Visual-Only Webpage</a></summary>
         <ul class="activities">
           <li class="activity"><a href="exercise-interaction-in-figma.html">Exercise: Interaction in Figma</a></li>
           <li class="activity"><a href="exercise-coding-from-life.html">Exercise: CSS Drawing</a></li>
+        </ul>
+      </details>
+    </li>
+
+    <li class="project" data-status="current">
+      <details open>
+        <summary><a class="project-title" href="project-4-collective-web-zine.html">Project 4: Collective Web Zine</a></summary>
+        <ul class="activities">
+          <li class="activity"><a href="exercise-commit-to-diary.html">Exercise: Commit to Diary</a></li>
         </ul>
       </details>
     </li>

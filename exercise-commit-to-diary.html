@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Core 1: Interaction Lab</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    html, body {
+      margin: 0;
+    }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+      line-height: 1.25;
+      min-height: 100vh;
+      min-height: 100svh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px 16px;
+    }
+    .page {
+      max-width: calc(680px - 10ch);
+      padding: 24px;
+    }
+    h1 {
+      font-size: 16px;
+      font-weight: bold;
+    }
+    h2 {
+      font-size: 16px;
+      font-weight: normal;
+      text-decoration: underline;
+    }
+    p {
+      font-size: 16px;
+    }
+    .dates {
+      font-style: italic;
+    }
+    /* Code in the text: monospace, at the same size as the text around it */
+    code {
+      font-family: monospace, monospace;
+      font-size: 1em;
+    }
+    li {
+      margin-bottom: 4px;
+    }
+    /* The step-by-step dropdown opens and closes with "+" / "–", like the index */
+    .steps summary {
+      list-style: none;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+    .steps summary::-webkit-details-marker {
+      display: none;
+    }
+    .steps summary::after {
+      content: " +";
+    }
+    .steps[open] > summary::after {
+      content: " \2013";
+    }
+  </style>
+  <link rel="stylesheet" href="nav.css">
+  <script src="js/nav.js" defer></script>
+  <link rel="icon" type="image/png" href="images/favicon.png">
+</head>
+<body class="exercise">
+
+<main id="content" class="page">
+
+  <h1>Exercise: Commit to Diary (<time datetime="2026-10-20">Oct 20</time>)</h1>
+
+  <p>Using what you've learned about cloning, committing and pushing with GitHub Desktop, you'll keep a live diary of a place.</p>
+
+  <p>Find a busy spot around school, like a lobby, hallway, elevator bank or café, and settle in. Every 3&ndash;5 minutes, write down what you see and/or hear, then commit and push it. Keep going until 11:40. Aim for at least 16 entries.</p>
+
+  <p>Each push goes live on your own diary and on the <a href="https://severinbunse.github.io/commit-to-diary-collective/" target="_blank" rel="noopener">class diary</a>, where everyone's entries come together in order of time.</p>
+
+  <details class="steps">
+    <summary>Step by step</summary>
+
+    <h2>Set up</h2>
+
+    <ol>
+      <li>On <a href="https://github.com/severinbunse/commit-to-diary" target="_blank" rel="noopener">the template</a>, click <strong>Use this template</strong>. Name your repository <code>commit-to-diary</code> and keep it Public. Unlike a fork, this is your own repository, not linked to the template, so there's no pull request.</li>
+      <li>Under <strong>Settings &rarr; Pages</strong>, choose <code>main</code> and <strong>Save</strong>.</li>
+      <li>In GitHub Desktop, choose <strong>File &rarr; Clone Repository</strong>, select <code>commit-to-diary</code> and click <strong>Clone</strong>.</li>
+      <li>Click <strong>Open in Visual Studio Code</strong>.</li>
+    </ol>
+
+    <h2>Every 3&ndash;5 minutes</h2>
+
+    <ol>
+      <li>Copy an entry in <code>index.html</code>, paste it below the last one, and write.</li>
+      <li>Save.</li>
+      <li>In GitHub Desktop, sum up your entry in a few words, e.g. <code>door keeps slamming</code>, and click <strong>Commit to main</strong>.</li>
+      <li>Click <strong>Push origin</strong>.</li>
+    </ol>
+
+  </details>
+
+</main>
+
+</body>
+</html>
