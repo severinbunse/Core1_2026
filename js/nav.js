@@ -106,16 +106,19 @@ const studentNav = `
   <h2>Students</h2>
 
   <ul class="student-list">
+    <li class="student">Aara</li>
     <li class="student">Amber</li>
     <li class="student">ella</li>
     <li class="student">Florence</li>
     <li class="student">Isabella</li>
+    <li class="student">Jackson</li>
     <li class="student">Katie</li>
     <li class="student">Kitty</li>
     <li class="student">Liv</li>
     <li class="student">Lulu</li>
     <li class="student">Renee</li>
     <li class="student">Sara</li>
+    <li class="student">Sofia</li>
     <li class="student">Tarni</li>
     <li class="student">Undarga</li>
     <li class="student">Victoria</li>
