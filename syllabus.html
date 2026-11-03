@@ -41,16 +41,47 @@
     h3 {
       font-size: 16px;
       font-weight: normal;
-      font-style: italic;
+      text-decoration: underline;
     }
-    /* Title on the left, date on the right */
     .project-header,
     .week-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      flex-wrap: wrap;
-      gap: 0 16px;
+      margin: 16px 0;
+    }
+    .project-header > *,
+    .week-header > * {
+      margin: 0;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid black;
+      margin: 24px 0;
+    }
+    /* Dashes line up with the left edge of the text */
+    .page ul {
+      padding-left: 1em;
+      list-style-type: "– ";
+    }
+    /* Projects are bold; their options (1a, 1b...) are underlined */
+    #projects .project-title,
+    .week-title {
+      font-weight: bold;
+      text-decoration: none;
+    }
+    #projects strong {
+      display: block;
+      font-weight: normal;
+      text-decoration: underline;
+    }
+    /* A line between projects and between weeks */
+    #projects .project + .project,
+    .week + .week,
+    #schedule {
+      border-top: 1px solid black;
+      margin-top: 24px;
+      padding-top: 8px; /* plus the heading's 16px margin */
+    }
+    .page details {
+      margin-bottom: 16px;
     }
     .meta-table {
       border-collapse: collapse;
@@ -89,8 +120,7 @@
 
     <section class="project">
       <header class="project-header">
-        <h2 class="project-title">Project 1: Choose One</h2>
-        <p class="dates"><time datetime="2026-09-01">Sep 1</time> &ndash; <time datetime="2026-09-15">Sep 15, 2026</time></p>
+        <h2 class="project-title">Project 1: Choose One (<time datetime="2026-09-01">Sep 1</time> &ndash; <time datetime="2026-09-15">Sep 15</time>)</h2>
       </header>
       <p><strong>1a — Journal a walk or field trip:</strong> Walk around somewhere and observe the environment around you. Bring along a journal or notetaking app. You could document people, plants, places you see along the way, for example. Turn this walk into a webpage by writing HTML. You should use a variety of tags to express your ideas.</p>
       <p><strong>1b — Document an interview:</strong> Conduct an interview with someone about a subject of your choosing. Record this interview and turn it into a webpage by writing HTML. You should use a variety of tags to express your ideas.</p>
@@ -103,8 +133,7 @@
 
     <section class="project">
       <header class="project-header">
-        <h2 class="project-title">Project 2: Recipe</h2>
-        <p class="dates"><time datetime="2026-09-15">Sep 15</time> &ndash; <time datetime="2026-09-29">Sep 29, 2026</time></p>
+        <h2 class="project-title">Project 2: Recipe (<time datetime="2026-09-15">Sep 15</time> &ndash; <time datetime="2026-09-29">Sep 29</time>)</h2>
       </header>
       <p>A recipe is a set of instructions to achieve a standardized result. A recipe is most typically thought of in a cooking context, but an algorithm is also a recipe. Create your own "recipe" in HTML. Then, have 2 other people make your recipe and document the results on the same webpage. You must use &lt;img&gt;, &lt;a&gt;, &lt;section&gt;, &lt;p&gt; at least once.</p>
       <p><em>You will learn:</em> Structuring instructions as markup, Working with images and links, Documenting outcomes from other users</p>
@@ -112,22 +141,20 @@
 
     <section class="project">
       <header class="project-header">
-        <h2 class="project-title">Project 3: Choose One</h2>
-        <p class="dates"><time datetime="2026-09-29">Sep 29</time> &ndash; <time datetime="2026-10-20">Oct 20, 2026</time></p>
+        <h2 class="project-title">Project 3: Choose One (<time datetime="2026-09-29">Sep 29</time> &ndash; <time datetime="2026-10-20">Oct 20</time>)</h2>
       </header>
       <p><strong>3a — Museum painting recreation:</strong> Find a museum that would allow you to open your laptop while observing an artwork. (Note — if this is truly not possible, go to a museum and take a photo of an artwork for later). Re-draw this painting on a webpage using CSS.</p>
       <p><strong>3b — Visual-only webpage:</strong> Create a webpage that exists only for visual contemplation. It cannot have any usable functions nor serve a utilitarian purpose.</p>
       <p><em>You will learn:</em> CSS positioning and values, Recreating visual composition with code, Layout constraints as a design tool</p>
       <details>
-        <summary>Part 2 — Structures and Patterns (Weeks 5–10)</summary>
+        <summary>Part 2 — Structures and Patterns (Weeks 5–11)</summary>
         <p>In our second segment, we'll investigate how designing for the digital canvas differs from other media. We will aim to understand the inherent complexities and how to use them to create compelling digital experiences.</p>
       </details>
     </section>
 
     <section class="project">
       <header class="project-header">
-        <h2 class="project-title">Project 4: Collective Web Zine</h2>
-        <p class="dates"><time datetime="2026-10-20">Oct 20</time> &ndash; <time datetime="2026-11-03">Nov 3, 2026</time></p>
+        <h2 class="project-title">Project 4: Collective Web Zine (<time datetime="2026-10-27">Oct 27</time> &ndash; <time datetime="2026-11-10">Nov 10</time>)</h2>
       </header>
       <p>A zine is a small, self-published booklet or magazine. It is usually made by one person or a group. Your class will be creating its own web zine. As a class, create ideas for a collection centered around one theme. Then, use HTML and CSS to create your own "page" for the zine. Then, link all of your pages together to create a website.</p>
       <p><em>You will learn:</em> Collaborative HTML/CSS workflow, Linking multi-page sites, Shared visual systems</p>
@@ -135,21 +162,19 @@
 
     <section class="project">
       <header class="project-header">
-        <h2 class="project-title">Project 5: Clock with JS</h2>
-        <p class="dates"><time datetime="2026-11-17">Nov 17</time> &ndash; <time datetime="2026-11-24">Nov 24, 2026</time></p>
+        <h2 class="project-title">Project 5: Clock with JS (<time datetime="2026-11-10">Nov 10</time> &ndash; <time datetime="2026-11-24">Nov 24</time>)</h2>
       </header>
       <p>We provide the clock framework using setInterval. You have the chance to make it do something different depending on the time of day, using style, if/else, and so on.</p>
       <p><em>You will learn:</em> JavaScript variables and conditionals, setInterval and timing, Updating the DOM over time</p>
       <details>
-        <summary>Part 3 — Experiences and Tools (Weeks 10–15)</summary>
+        <summary>Part 3 — Experiences and Tools (Weeks 11–15)</summary>
         <p>As we begin to develop systematic thinking through HTML and CSS practice, JavaScript will be introduced in our final segment for ideas of programming and automation. We will use web-based JavaScript to write functions and tools for ourselves and other audiences to use and play with.</p>
       </details>
     </section>
 
     <section class="project">
       <header class="project-header">
-        <h2 class="project-title">Project 6: Choose One</h2>
-        <p class="dates"><time datetime="2026-11-24">Nov 24</time> &ndash; <time datetime="2026-12-01">Dec 1, 2026</time></p>
+        <h2 class="project-title">Project 6: Choose One (<time datetime="2026-11-24">Nov 24</time> &ndash; <time datetime="2026-12-01">Dec 1</time>)</h2>
       </header>
       <p><strong>6a — Instrument:</strong> Using events and interactions, create your own instrument. You can either make this instrument using clicks on screen, or with keyboard events.</p>
       <p><strong>6b — Alternate keyboard:</strong> Make a keyboard for something other than typing — use mouse movement or key presses to interact.</p>
@@ -158,8 +183,7 @@
 
     <section class="project">
       <header class="project-header">
-        <h2 class="project-title">Project 7: Daily Tool Website</h2>
-        <p class="dates"><time datetime="2026-12-01">Dec 1</time> &ndash; <time datetime="2026-12-08">Dec 8, 2026</time></p>
+        <h2 class="project-title">Project 7: Daily Tool Website (<time datetime="2026-12-01">Dec 1</time> &ndash; <time datetime="2026-12-08">Dec 8</time>)</h2>
       </header>
       <p>Now that you know HTML, CSS, and JS, you have all the capabilities to create a web application. Using this knowledge, create a tool that you could use daily that lives on a webpage.</p>
       <p><em>You will learn:</em> Full HTML/CSS/JS integration, Designing a personal tool, DOM manipulation at scale</p>
@@ -171,14 +195,14 @@
 
     <section class="week">
       <header class="week-header">
-        <h2 class="week-title">Week 1</h2>
-        <p class="dates"><time datetime="2026-09-01">Tuesday, September 1, 2026</time></p>
+        <h2 class="week-title">Week 1 (<time datetime="2026-09-01">Sep 1</time>)</h2>
       </header>
       <h3>In-class</h3>
       <ul>
         <li>Welcome and icebreakers (stickers)</li>
         <li>What is the internet? Who is the internet for?</li>
         <li>Semantic structure; linear and non-linear reading experiences</li>
+        <li>In pairs, build a simple homepage introducing yourselves</li>
       </ul>
       <h3>Assignment</h3>
       <ul>
@@ -188,13 +212,12 @@
 
     <section class="week">
       <header class="week-header">
-        <h2 class="week-title">Week 2</h2>
-        <p class="dates"><time datetime="2026-09-08">Tuesday, September 8, 2026</time></p>
+        <h2 class="week-title">Week 2 (<time datetime="2026-09-08">Sep 8</time>)</h2>
       </header>
       <h3>In-class</h3>
       <ul>
         <li>Typographic patterns on the web; typographic hierarchy and navigation</li>
-        <li>Figma: setup, organization, type styles</li>
+        <li>Figma: setup, organization, frames, layers, grids, fonts</li>
       </ul>
       <h3>Assignment</h3>
       <ul>
@@ -204,13 +227,15 @@
 
     <section class="week">
       <header class="week-header">
-        <h2 class="week-title">Week 3</h2>
-        <p class="dates"><time datetime="2026-09-15">Tuesday, September 15, 2026</time></p>
+        <h2 class="week-title">Week 3 (<time datetime="2026-09-15">Sep 15</time>)</h2>
       </header>
       <h3>In-class</h3>
       <ul>
         <li>Responsive design (typography focus)</li>
         <li>Accessibility (typography focus)</li>
+        <li>Figma: plugins</li>
+        <li>Figma: auto layout, type scales, text styles, constraints</li>
+        <li>Image sizing for the web: file formats and sizes</li>
       </ul>
       <h3>Assignment</h3>
       <ul>
@@ -220,12 +245,13 @@
 
     <section class="week">
       <header class="week-header">
-        <h2 class="week-title">Week 4</h2>
-        <p class="dates"><time datetime="2026-09-22">Tuesday, September 22, 2026</time></p>
+        <h2 class="week-title">Week 4 (<time datetime="2026-09-22">Sep 22</time>)</h2>
       </header>
       <h3>In-class</h3>
       <ul>
         <li>Experimental web typography</li>
+        <li>Recreate a page from conVERSations by Kamau Brathwaite in HTML and CSS</li>
+        <li>GitHub recap: repositories, commits, branches, pull requests</li>
       </ul>
       <h3>Assignment</h3>
       <ul>
@@ -235,12 +261,12 @@
 
     <section class="week">
       <header class="week-header">
-        <h2 class="week-title">Week 5</h2>
-        <p class="dates"><time datetime="2026-09-29">Tuesday, September 29, 2026</time></p>
+        <h2 class="week-title">Week 5 (<time datetime="2026-09-29">Sep 29</time>)</h2>
       </header>
       <h3>In-class</h3>
       <ul>
         <li>Unit 1 wrap-up; project critique</li>
+        <li>GitHub exercise: fork, edit CSS, pull request</li>
       </ul>
       <h3>Assignment</h3>
       <ul>
@@ -250,12 +276,14 @@
 
     <section class="week">
       <header class="week-header">
-        <h2 class="week-title">Week 6</h2>
-        <p class="dates"><time datetime="2026-10-06">Tuesday, October 6, 2026</time></p>
+        <h2 class="week-title">Week 6 (<time datetime="2026-10-06">Oct 6</time>)</h2>
       </header>
       <h3>In-class</h3>
       <ul>
         <li>What is an interface? Parts of an interface (button/menu/inputs)</li>
+        <li>Behavioral states in design</li>
+        <li>Affordances and microinteractions; usability and accessibility</li>
+        <li>Figma: reusable and dynamic elements — auto layout, components, instances, variables; prototyping and interactions</li>
       </ul>
       <h3>Assignment</h3>
       <ul>
@@ -265,13 +293,12 @@
 
     <section class="week">
       <header class="week-header">
-        <h2 class="week-title">Week 7</h2>
-        <p class="dates"><time datetime="2026-10-13">Tuesday, October 13, 2026</time></p>
+        <h2 class="week-title">Week 7 (<time datetime="2026-10-13">Oct 13</time>)</h2>
       </header>
       <h3>In-class</h3>
       <ul>
-        <li>Behavioral states in design</li>
-        <li>Affordances and microinteractions; usability and accessibility</li>
+        <li>CSS position</li>
+        <li>CSS drawing tutorial; life drawing exercise</li>
       </ul>
       <h3>Assignment</h3>
       <ul>
@@ -281,27 +308,40 @@
 
     <section class="week">
       <header class="week-header">
-        <h2 class="week-title">Week 8</h2>
-        <p class="dates"><time datetime="2026-10-20">Tuesday, October 20, 2026</time></p>
+        <h2 class="week-title">Week 8 (<time datetime="2026-10-20">Oct 20</time>)</h2>
       </header>
       <h3>In-class</h3>
       <ul>
-        <li>Overview of generative AI tools and prompt generation</li>
+        <li>GitHub Desktop; exercise: Commit to Diary</li>
       </ul>
       <h3>Assignment</h3>
       <ul>
-        <li>Project 3 due, critique; intro Project 4 (Collective web zine); small-group critique and group exercise: memory file</li>
+        <li>Project 3 due, critique; start thinking about themes for the web zine</li>
       </ul>
     </section>
 
     <section class="week">
       <header class="week-header">
-        <h2 class="week-title">Week 9</h2>
-        <p class="dates"><time datetime="2026-10-27">Tuesday, October 27, 2026</time></p>
+        <h2 class="week-title">Week 9 (<time datetime="2026-10-27">Oct 27</time>)</h2>
       </header>
       <h3>In-class</h3>
       <ul>
-        <li>Figma: reusable and dynamic elements — symbols, components, layout properties, variables and conditions</li>
+        <li>CSS Grid</li>
+        <li>Web zine presentation; theme vote</li>
+      </ul>
+      <h3>Assignment</h3>
+      <ul>
+        <li>Intro Project 4 (Collective web zine)</li>
+      </ul>
+    </section>
+
+    <section class="week">
+      <header class="week-header">
+        <h2 class="week-title">Week 10 (<time datetime="2026-11-03">Nov 3</time>)</h2>
+      </header>
+      <h3>In-class</h3>
+      <ul>
+        <li>Recap of creating your presentation deck</li>
       </ul>
       <h3>Assignment</h3>
       <ul>
@@ -311,23 +351,7 @@
 
     <section class="week">
       <header class="week-header">
-        <h2 class="week-title">Week 10</h2>
-        <p class="dates"><time datetime="2026-11-03">Tuesday, November 3, 2026</time></p>
-      </header>
-      <h3>In-class</h3>
-      <ul>
-        <li>Recap of creating your presentation deck</li>
-      </ul>
-      <h3>Assignment</h3>
-      <ul>
-        <li>Project 4 due, critique; intro Unit 3</li>
-      </ul>
-    </section>
-
-    <section class="week">
-      <header class="week-header">
-        <h2 class="week-title">Week 11</h2>
-        <p class="dates"><time datetime="2026-11-10">Tuesday, November 10, 2026</time></p>
+        <h2 class="week-title">Week 11 (<time datetime="2026-11-10">Nov 10</time>)</h2>
       </header>
       <h3>In-class</h3>
       <ul>
@@ -336,45 +360,44 @@
       </ul>
       <h3>Assignment</h3>
       <ul>
+        <li>Project 4 due, critique; intro Unit 3</li>
+        <li>Intro Project 5 (Clock with JS)</li>
         <li>Small-group critique and group exercise: user journey</li>
       </ul>
     </section>
 
     <section class="week">
       <header class="week-header">
-        <h2 class="week-title">Week 12</h2>
-        <p class="dates"><time datetime="2026-11-17">Tuesday, November 17, 2026</time></p>
+        <h2 class="week-title">Week 12 (<time datetime="2026-11-17">Nov 17</time>)</h2>
       </header>
       <h3>In-class</h3>
       <ul>
-        <li>Figma: prototyping, styles, plugins</li>
+        <li>Visit to the Horological Society</li>
       </ul>
       <h3>Assignment</h3>
       <ul>
-        <li>Intro Project 5 (Clock with JS); small-group critique and group exercise: Figma prototype</li>
+        <li>Continue Project 5</li>
       </ul>
     </section>
 
     <section class="week">
       <header class="week-header">
-        <h2 class="week-title">Week 13</h2>
-        <p class="dates"><time datetime="2026-11-24">Tuesday, November 24, 2026</time></p>
+        <h2 class="week-title">Week 13 (<time datetime="2026-11-24">Nov 24</time>)</h2>
       </header>
       <h3>In-class</h3>
       <ul>
         <li>User testing methods</li>
-        <li>Figma variables, Dev Mode (and its limitations)</li>
+        <li>Figma Dev Mode (and its limitations)</li>
       </ul>
       <h3>Assignment</h3>
       <ul>
-        <li>Project 5 due, critique; intro Project 6 — choose 7a (Instrument) or 7b (Alternate keyboard)</li>
+        <li>Project 5 due, critique; intro Project 6 — choose 6a (Instrument) or 6b (Alternate keyboard)</li>
       </ul>
     </section>
 
     <section class="week">
       <header class="week-header">
-        <h2 class="week-title">Week 14</h2>
-        <p class="dates"><time datetime="2026-12-01">Tuesday, December 1, 2026</time></p>
+        <h2 class="week-title">Week 14 (<time datetime="2026-12-01">Dec 1</time>)</h2>
       </header>
       <h3>In-class</h3>
       <ul>
@@ -388,8 +411,7 @@
 
     <section class="week">
       <header class="week-header">
-        <h2 class="week-title">Week 15: Final Critique</h2>
-        <p class="dates"><time datetime="2026-12-08">Tuesday, December 8, 2026</time></p>
+        <h2 class="week-title">Week 15: Final Critique (<time datetime="2026-12-08">Dec 8</time>)</h2>
       </header>
       <h3>In-class</h3>
       <ul>
@@ -409,9 +431,9 @@
     <h2>Assessment criteria</h2>
     <table class="meta-table">
       <tr><td>25%</td><td>Attendance &amp; Peer Critique</td></tr>
-      <tr><td>25%</td><td>Weekly entries and participation</td></tr>
-      <tr><td>25%</td><td>Midterm edit and written summary</td></tr>
-      <tr><td>25%</td><td>Final collection</td></tr>
+      <tr><td>25%</td><td>In-class exercises and participation</td></tr>
+      <tr><td>25%</td><td>Projects 1–4</td></tr>
+      <tr><td>25%</td><td>Projects 5–7</td></tr>
     </table>
   </section>
 

@@ -90,11 +90,12 @@ const siteNav = `
   </details>
 
   <ul class="nav-links">
-    <li><a href="syllabus.pdf" target="_blank" rel="noopener">Syllabus</a></li>
+    <li><a href="syllabus.html">Syllabus</a></li>
+    <li><a href="https://parsons.github.io/parsons-demoland/#core-2-interaction-f26" target="_blank" rel="noopener">Lecture Demos</a></li>
     <li><a href="mailto:bunses@newschool.edu">Contact</a></li>
   </ul>
 
-  <p class="neko-note">※ The cat following your mouse is <a href="https://en.wikipedia.org/wiki/Neko_(software)" target="_blank" rel="noopener">Neko</a> (Japanese for "cat"), one of the first virtual pets on a computer desktop, years before digital companions like Tamagotchi and Clippy. It lived on Macintosh screens all through the 1990s.</p>
+  <p class="neko-note">※ The cat following your mouse is <a href="https://en.wikipedia.org/wiki/Neko_(software)" target="_blank" rel="noopener">Neko</a> (Japanese for "cat"), one of the first virtual pets on a computer desktop. It lived on Macintosh screens all through the 1990s.</p>
 
 </nav>
 `;
@@ -137,7 +138,7 @@ const currentPage = location.pathname.split('/').pop() || 'index.html';
 // (or the syllabus, if the current project doesn't have a page yet)
 if (currentPage === 'index.html') {
   const currentProject = document.querySelector('#index [data-status="current"] a.project-title');
-  location.replace(currentProject ? currentProject.getAttribute('href') : 'syllabus.pdf');
+  location.replace(currentProject ? currentProject.getAttribute('href') : 'syllabus.html');
 }
 
 // On phones the index is a menu: the button next to the title opens and closes it
