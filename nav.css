@@ -2,6 +2,12 @@
    The index is fixed, so the page content keeps its own styles
    and stays centered in the viewport. */
 
+/* Always leave room for the scrollbar, so long pages (the syllabus)
+   are centered in the same place as short ones */
+html {
+  scrollbar-gutter: stable;
+}
+
 /* Links within the site are black and not underlined;
    links to other websites are blue and underlined */
 a {
