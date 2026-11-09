@@ -38,12 +38,19 @@
     p {
       font-size: 16px;
     }
+    /* Student projects: a thin line separates them from the assignment */
+    .student-projects {
+      margin-top: 24px;
+      padding-top: 8px;
+      border-top: 1px solid black;
+    }
     .dates {
       font-style: italic;
     }
   </style>
   <link rel="stylesheet" href="nav.css">
   <script src="js/nav.js" defer></script>
+  <script src="js/student-projects.js" defer></script>
   <link rel="icon" type="image/png" href="images/favicon.png">
 </head>
 <body class="assignment">
@@ -53,6 +60,8 @@
   <h1>Project 3: Visual-Only Webpage (Due <time datetime="2026-10-20">Oct 20</time>)</h1>
 
   <p>Create a webpage that exists only for visual contemplation. It cannot have any usable functions nor serve a utilitarian purpose.</p>
+
+  <section class="student-projects" aria-label="Student projects" data-sheet="Project 3: Visual-Only Webpage" hidden></section>
 
 </main>
 
