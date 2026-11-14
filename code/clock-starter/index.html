@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+
+<style>
+
+    body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: Arial;
+        font-size: 15vw;
+    }
+
+</style>
+
+</head>
+<body>
+
+    <div id="clock"></div>
+
+<script>
+
+    // STEP 1: Find the element where the time goes.
+    const clock = document.getElementById('clock');
+
+    // STEP 2: A function that reads the time and shows it.
+    function tick() {
+
+        const now = new Date();         // the current date and time
+        const h = now.getHours();       // 0 to 23
+        const m = now.getMinutes();     // 0 to 59
+        const s = now.getSeconds();     // 0 to 59
+
+        // padStart adds a 0 in front of single numbers: 7 becomes 07
+        const hh = String(h).padStart(2, '0');
+        const mm = String(m).padStart(2, '0');
+        const ss = String(s).padStart(2, '0');
+
+        clock.textContent = hh + ':' + mm + ':' + ss;
+
+        // STEP 3: Your design. Change how the clock looks depending on the time.
+        // Use h, m or s. Change colors, fonts, sizes, images, text...
+        if (h < 12) {
+            // morning
+            document.body.style.backgroundColor = 'white';
+            document.body.style.color = 'black';
+        } else if (h < 18) {
+            // afternoon
+            document.body.style.backgroundColor = 'black';
+            document.body.style.color = 'white';
+        } else {
+            // evening and night
+            document.body.style.backgroundColor = 'navy';
+            document.body.style.color = 'yellow';
+        }
+    }
+
+    // STEP 4: Run tick once now, then again every 1000 milliseconds (1 second).
+    tick();
+    setInterval(tick, 1000);
+
+</script>
+
+</body>
+</html>
