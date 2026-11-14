@@ -68,11 +68,20 @@ const siteNav = `
       </details>
     </li>
 
-    <li class="project" data-status="current">
+    <li class="project" data-status="done">
       <details open>
         <summary><a class="project-title" href="project-4-collective-web-zine.html">Project 4: Collective Web Zine</a></summary>
         <ul class="activities">
           <li class="activity"><a href="exercise-commit-to-diary.html">Exercise: Commit to Diary</a></li>
+        </ul>
+      </details>
+    </li>
+
+    <li class="project" data-status="current">
+      <details open>
+        <summary><a class="project-title" href="project-5-js-clock.html">Project 5: JS Clock</a></summary>
+        <ul class="activities">
+          <li class="activity"><a href="exercise-apple-watch-clock.html">Exercise: Apple Watch Clock in Figma</a></li>
         </ul>
       </details>
     </li>
@@ -86,6 +95,9 @@ const siteNav = `
       <li class="activity"><a href="https://www.are.na/editorial/when-it-changed-part-3-an-ambient-aftermath" target="_blank" rel="noopener" title="When It Changed Part 3: An Ambient Aftermath">When It Changed Part 3: An Ambient Aftermath</a></li>
       <li class="activity"><a href="https://laurelschwulst.com/e/my-website-is-a-shifting-house/" target="_blank" rel="noopener" title="My Website Is a Shifting House Next to a River of Knowledge. What Could Yours Be?">My Website Is a Shifting House Next to a River of Knowledge. What Could Yours Be?</a></li>
       <li class="activity"><a href="https://laurelsletter.substack.com/p/laurels-letter-fall-winter-2023?open=false#§of-ultralight" target="_blank" rel="noopener" title="Laurel's Letter, Fall/Winter 2023 — Of Ultralight">Laurel's Letter, Fall/Winter 2023 — Of Ultralight</a></li>
+      <li class="activity"><a href="https://monoskop.org/images/5/5e/TCC06_Sinister.pdf" target="_blank" rel="noopener" title="Notes on the Type, Time, Letters &amp; Spirits">Notes on the Type, Time, Letters &amp; Spirits</a></li>
+      <li class="activity"><a href="https://www.newyorker.com/tech/annals-of-technology/the-thorny-problem-of-keeping-the-internets-time" target="_blank" rel="noopener" title="The Thorny Problem of Keeping the Internet's Time">The Thorny Problem of Keeping the Internet's Time</a></li>
+      <li class="activity"><a href="https://i-n-t-e-r-f-a-c-e.org/media/pdf/From-Sundials-to-Atomic-Clocks.pdf" target="_blank" rel="noopener" title="From Sundials to Atomic Clocks">From Sundials to Atomic Clocks</a></li>
     </ul>
   </details>
 
