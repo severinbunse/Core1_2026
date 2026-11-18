@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Clock</title>
+<style>
+  .hand {
+    position: absolute;
+    left: 50%;
+    bottom: 50%;                 /* starts at the center of the page, points up */
+    width: 2px;
+    background: black;
+    transform-origin: bottom;    /* rotates around its bottom end */
+  }
+
+  #hour   { 
+    height: 200px;
+    transform: rotate(90deg);    /* 3 o'clock */
+  }
+
+  #minute {
+    height: 320px;
+    transform: rotate(180deg);   /* 30 minutes */
+  }
+
+  #second {
+    height: 320px;
+    background-color: red;
+    transform: rotate(270deg);   /* 45 seconds */
+    }
+    
+</style>
+</head>
+<body>
+
+  <div class="hand" id="hour"></div>
+  <div class="hand" id="minute"></div>
+  <div class="hand" id="second"></div>
+
+<script>
+  const hourHand = document.getElementById("hour");
+  const minuteHand = document.getElementById("minute");
+  const secondHand = document.getElementById("second");
+
+  // Turn the hands to the current time
+  function updateClock() {
+    const now = new Date();
+    const hours = now.getHours();      // 0–23
+    const minutes = now.getMinutes();  // 0–59
+    const seconds = now.getSeconds();  // 0–59
+
+    const secondAngle = seconds * 6;                   // 360 / 60 = 6 degrees per second
+    const minuteAngle = minutes * 6;                // 360 / 60 = 6 degrees per minute
+    const hourAngle = hours * 30 + minutes / 2;   // 30 per hour, plus a little per minute
+
+    minuteHand.style.transform = `rotate(${minuteAngle}deg)`;
+    hourHand.style.transform = `rotate(${hourAngle}deg)`;
+    secondHand.style.transform = `rotate(${secondAngle}deg)`;
+  }
+
+  updateClock();                    // set the hands right away
+  setInterval(updateClock, 1000);   // then check again every second
+</script>
+
+</body>
+</html>
