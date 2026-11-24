@@ -1,70 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clock</title>
-
+<title>Clock</title>
 <style>
-
-    body {
-        margin: 0;
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-family: Arial;
-        font-size: 15vw;
-    }
-
+  body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15vw;
+  }
 </style>
-
 </head>
 <body>
 
-    <div id="clock"></div>
+  <div id="clock"></div>
 
 <script>
+  const clock = document.getElementById("clock");
 
-    // STEP 1: Find the element where the time goes.
-    const clock = document.getElementById('clock');
+  // Show the current time and change the style
+  function updateClock() {
+    const now = new Date();
+    const hours = now.getHours();      // 0–23
+    const minutes = now.getMinutes();  // 0–59
+    const seconds = now.getSeconds();  // 0–59
 
-    // STEP 2: A function that reads the time and shows it.
-    function tick() {
+    clock.textContent = `${hours}:${minutes}:${seconds}`;
 
-        const now = new Date();         // the current date and time
-        const h = now.getHours();       // 0 to 23
-        const m = now.getMinutes();     // 0 to 59
-        const s = now.getSeconds();     // 0 to 59
-
-        // padStart adds a 0 in front of single numbers: 7 becomes 07
-        const hh = String(h).padStart(2, '0');
-        const mm = String(m).padStart(2, '0');
-        const ss = String(s).padStart(2, '0');
-
-        clock.textContent = hh + ':' + mm + ':' + ss;
-
-        // STEP 3: Your design. Change how the clock looks depending on the time.
-        // Use h, m or s. Change colors, fonts, sizes, images, text...
-        if (h < 12) {
-            // morning
-            document.body.style.backgroundColor = 'white';
-            document.body.style.color = 'black';
-        } else if (h < 18) {
-            // afternoon
-            document.body.style.backgroundColor = 'black';
-            document.body.style.color = 'white';
-        } else {
-            // evening and night
-            document.body.style.backgroundColor = 'navy';
-            document.body.style.color = 'yellow';
-        }
+    if (seconds < 12) {
+      document.body.style.fontFamily = "Arial";
+      document.body.style.backgroundColor = "yellow";
+      document.body.style.color = "black";
+    } else if (seconds < 24) {
+      document.body.style.fontFamily = "Times";
+      document.body.style.backgroundColor = "black";
+      document.body.style.color = "white";
+    } else if (seconds < 36) {
+      document.body.style.fontFamily = "Courier";
+      document.body.style.backgroundColor = "tomato";
+      document.body.style.color = "yellow";
+    } else if (seconds < 48) {
+      document.body.style.fontFamily = "Georgia";
+      document.body.style.backgroundColor = "white";
+      document.body.style.color = "red";
+    } else {
+      document.body.style.fontFamily = "Impact";
+      document.body.style.backgroundColor = "royalblue";
+      document.body.style.color = "white";
     }
+  }
 
-    // STEP 4: Run tick once now, then again every 1000 milliseconds (1 second).
-    tick();
-    setInterval(tick, 1000);
-
+  updateClock();                    // show the time right away
+  setInterval(updateClock, 1000);   // then check again every second
 </script>
 
 </body>
