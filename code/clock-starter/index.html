@@ -1,60 +1,95 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Clock</title>
-<style>
-  body {
-    margin: 0;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 15vw;
-  }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Changing Clock</title>
+
+    <style>
+
+        /* Center everything on the page in a column */
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: 4vh;
+        }
+
+        #message {
+            margin: 0;
+        }
+
+        #picture {
+            max-width: 300px;
+        }
+
+    </style>
+
 </head>
 <body>
 
-  <div id="clock"></div>
+    <img id="picture" src="https://pilot-protection-services.aopa.org/-/media/Images/PPS/News-Images/2022/03-2022-Zambrana.jpg?mw=880&mh=495&as=1&hash=2DE7A96A51DBC30B32BF28B0C5761F25" alt="Changing picture">
+    <div id="clock">this is where the time goes</div>
+    <p id="message">this is going to be a message</p>
 
-<script>
-  const clock = document.getElementById("clock");
+    <script>
 
-  // Show the current time and change the style
-  function updateClock() {
-    const now = new Date();
-    const hours = now.getHours();      // 0–23
-    const minutes = now.getMinutes();  // 0–59
-    const seconds = now.getSeconds();  // 0–59
+        // 1. Grab the elements we want to change
+        const clock = document.getElementById('clock');
+        const message = document.getElementById('message');
+        const picture = document.getElementById('picture');
 
-    clock.textContent = `${hours}:${minutes}:${seconds}`;
+        // 2. This function runs once every second
+        function updateClock() {
+            const now = new Date();
+            const hours = now.getHours();
+            const minutes = now.getMinutes();
+            const seconds = now.getSeconds();
 
-    if (seconds < 12) {
-      document.body.style.fontFamily = "Arial";
-      document.body.style.backgroundColor = "yellow";
-      document.body.style.color = "black";
-    } else if (seconds < 24) {
-      document.body.style.fontFamily = "Times";
-      document.body.style.backgroundColor = "black";
-      document.body.style.color = "white";
-    } else if (seconds < 36) {
-      document.body.style.fontFamily = "Courier";
-      document.body.style.backgroundColor = "tomato";
-      document.body.style.color = "yellow";
-    } else if (seconds < 48) {
-      document.body.style.fontFamily = "Georgia";
-      document.body.style.backgroundColor = "white";
-      document.body.style.color = "red";
-    } else {
-      document.body.style.fontFamily = "Impact";
-      document.body.style.backgroundColor = "royalblue";
-      document.body.style.color = "white";
-    }
-  }
+            // Show the current time
+            clock.textContent = `${hours}:${minutes}:${seconds}`;
 
-  updateClock();                    // show the time right away
-  setInterval(updateClock, 1000);   // then check again every second
-</script>
+            // 3. Change the greeting based on the HOUR
+            if (hours < 12) {
+                message.textContent = "Good morning";
+            } else if (hours < 16) {
+                message.textContent = "Good afternoon";
+            } else {
+                message.textContent = "Good evening";
+            }
+
+            // 4. Change the look of the page based on the SECOND
+            if (seconds < 12) {
+                // 0–11 seconds: yellow
+                document.body.style.fontFamily = "Arial";
+                document.body.style.backgroundColor = "yellow";
+                document.body.style.color = "black";
+                picture.src = "https://www.popsci.com/wp-content/uploads/2025/06/how_do_clouds_get_their_shapes.jpg";
+                picture.style.transform = "rotate(0deg)";
+            } else if (seconds < 24) {
+                // 12–23 seconds: blue
+                document.body.style.fontFamily = "Courier";
+                document.body.style.backgroundColor = "blue";
+                document.body.style.color = "white";
+                picture.src = "https://media.istockphoto.com/id/527049904/photo/dramatic-sky.jpg?s=612x612&w=0&k=20&c=5P6tXCmpGpX-8z6h6L7Qn7_cib6ha7rpp7mpTg0Xmsw=";
+                picture.style.transform = "rotate(45deg)";
+            } else {
+                // 24–59 seconds: green (keeps the picture from the blue phase)
+                document.body.style.fontFamily = "Times";
+                document.body.style.backgroundColor = "green";
+                document.body.style.color = "black";
+                picture.style.transform = "rotate(90deg)";
+            }
+        }
+
+        // 5. Run it right away, then every 1000 milliseconds (1 second)
+        updateClock();
+        setInterval(updateClock, 1000);
+
+    </script>
 
 </body>
 </html>
